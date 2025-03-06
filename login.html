@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Log In
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(180deg, #004d00 0%, #015a01 100%);
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <div class="flex justify-center mb-4">
+            <img alt="3R's image" class="h-12 w-12" height="100" src="img/pngwing.com.png" width="100" />
+        </div>
+        <h2 class="text-3xl font-bold text-center text-white mb-6">
+            Log In
+        </h2>
+        <form>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="auth-identifier">
+                    Email/Username/Phone Number
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white"
+                    id="auth-identifier" placeholder="Email/Username/Phone Number" type="text" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="password">
+                    Password
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="password"
+                    placeholder="Password" type="password" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="otp-verification">
+                    OTP Verification (optional)
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white"
+                    id="otp-verification" placeholder="OTP Verification" type="text" />
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <input class="mr-2" id="remember-me" type="checkbox" />
+                    <label class="text-white" for="remember-me">
+                        Remember Me
+                    </label>
+                </div>
+                <a class="text-red-500 font-bold" href="forgetpass.html">
+                    Forgot Password?
+                </a>
+            </div>
+            <button class="w-full p-3 rounded bg-gray-800 text-white font-bold mb-4">
+                Log In
+            </button>
+            <div class="flex items-center justify-center mb-4">
+                <span class="text-white">
+                    OR
+                </span>
+            </div>
+            <button
+                class="w-full p-3 rounded bg-white bg-opacity-20 text-white font-bold flex items-center justify-center mb-4">
+                <img alt="Google logo" class="mr-2" height="20" src="img/pngwing.com (1).png" width="20" />
+                Log in with Google
+            </button>
+            <div class="text-center">
+                <span class="text-white">
+                    Don't have an account?
+                    <a class="text-red-500 font-bold" href="signup.html">
+                        Sign up
+                    </a>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

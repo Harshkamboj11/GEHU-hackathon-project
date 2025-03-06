@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Sign Up
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(180deg, #004d00 0%, #006600 100%);
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <div class="flex justify-center mb-4">
+            <img alt="3R's image" class="h-12 w-12" height="150" src="img/pngwing.com.png" width="150" />
+        </div>
+        <h2 class="text-3xl font-bold text-center text-white mb-6">
+            Sign up
+        </h2>
+        <form>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="full-name">
+                    Full Name
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="full-name"
+                    placeholder="Full Name" type="text" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="email">
+                    Email Address
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="email"
+                    placeholder="Email Address" type="email" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="phone-number">
+                    Phone Number
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="phone-number"
+                    placeholder="Phone Number" type="tel" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="username">
+                    Username
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="username"
+                    placeholder="Username (optional)" type="text" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="password">
+                    Password
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="password"
+                    placeholder="Password" type="password" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="confirm-password">
+                    Confirm Password
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white"
+                    id="confirm-password" placeholder="Confirm Password" type="password" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="address">
+                    Address
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="address"
+                    placeholder="Address" type="text" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="user-role">
+                    User Role
+                </label>
+                <select class="w-full p-3 rounded bg-white bg-opacity-20 text-white" id="user-role">
+                    <option class="text-black" value="resident">
+                        Resident
+                    </option>
+                    <option class="text-black" value="waste-collector">
+                        Waste Collector
+                    </option>
+                    <option class="text-black" value="admin">
+                        Admin
+                    </option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="profile-picture">
+                    Profile Picture (optional)
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white"
+                    id="profile-picture" type="file" />
+            </div>
+            <div class="mb-6">
+                <label class="block text-white mb-2" for="government-id">
+                    Government ID (optional)
+                </label>
+                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="government-id"
+                    type="file" />
+            </div>
+            <button class="w-full p-3 rounded bg-gray-800 text-white font-bold mb-4">
+                Sign up
+            </button>
+            <div class="flex items-center justify-center mb-4">
+                <span class="text-white">
+                    OR
+                </span>
+            </div>
+            <button
+                class="w-full p-3 rounded bg-white bg-opacity-20 text-white font-bold flex items-center justify-center mb-4">
+                <img alt="Google logo" class="mr-2" height="20"
+                    src="img/pngwing.com (1).png"
+                    width="20" />
+                Sign up with Google
+            </button>
+            <div class="text-center">
+                <span class="text-white">
+                    Already have an account?
+                    <a class="text-red-500 font-bold" href="login.html">
+                        Log in
+                    </a>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
