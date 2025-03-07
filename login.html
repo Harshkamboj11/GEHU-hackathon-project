@@ -1,86 +1,119 @@
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-        Log In
-    </title>
     <script src="https://cdn.tailwindcss.com">
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <style>
-        body {
-            background: linear-gradient(180deg, #004d00 0%, #015a01 100%);
-            font-family: 'Arial', sans-serif;
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hover-bg-blue-800:hover {
+            background-color: #2c5282;
+        }
+
+        .hover-bg-green-600:hover {
+            background-color: #2f855a;
         }
     </style>
 </head>
 
-<body class="flex items-center justify-center min-h-screen">
-    <div class="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <div class="flex justify-center mb-4">
-            <img alt="3R's image" class="h-12 w-12" height="100" src="img/pngwing.com.png" width="100" />
+<body class="bg-green-900 flex items-center justify-center min-h-screen">
+    <div class="bg-green-800 p-8 rounded-lg shadow-lg w-full max-w-sm transition-all transform hover:scale-105">
+        <div class="flex justify-center mb-6">
+            <img alt="Logo" class="w-12 h-12" height="50"
+                src="img/pngwing.com.png"
+                width="50" />
         </div>
-        <h2 class="text-3xl font-bold text-center text-white mb-6">
+        <h2 class="text-white text-2xl font-bold text-center mb-6">
             Log In
         </h2>
-        <form>
+        <form id="loginForm">
             <div class="mb-4">
-                <label class="block text-white mb-2" for="auth-identifier">
+                <label class="block text-white mb-2" for="username">
                     Email/Username/Phone Number
                 </label>
-                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white"
-                    id="auth-identifier" placeholder="Email/Username/Phone Number" type="text" />
+                <input
+                    class="w-full p-2 rounded bg-green-700 text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id="username" placeholder="Email/Username/Phone Number" type="text" />
             </div>
             <div class="mb-4">
                 <label class="block text-white mb-2" for="password">
                     Password
                 </label>
-                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="password"
-                    placeholder="Password" type="password" />
+                <input
+                    class="w-full p-2 rounded bg-green-700 text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id="password" placeholder="Password" type="password" />
             </div>
             <div class="mb-4">
-                <label class="block text-white mb-2" for="otp-verification">
+                <label class="block text-white mb-2" for="otp">
                     OTP Verification (optional)
                 </label>
-                <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white"
-                    id="otp-verification" placeholder="OTP Verification" type="text" />
+                <input
+                    class="w-full p-2 rounded bg-green-700 text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id="otp" placeholder="OTP Verification" type="text" />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white mb-2" for="user-type">
+                    User Type
+                </label>
+                <select
+                    class="w-full p-2 rounded bg-green-700 text-white transition-all focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id="user-type">
+                    <option value="waste-collector">
+                        Waste Collector
+                    </option>
+                    <option value="resident">
+                        Resident
+                    </option>
+                </select>
             </div>
             <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center">
-                    <input class="mr-2" id="remember-me" type="checkbox" />
-                    <label class="text-white" for="remember-me">
-                        Remember Me
-                    </label>
-                </div>
-                <a class="text-red-500 font-bold" href="forgetpass.html">
+                <label class="flex items-center text-white">
+                    <input class="mr-2" type="checkbox" />
+                    Remember Me
+                </label>
+                <a class="text-red-500" href="forgetpass.html">
                     Forgot Password?
                 </a>
             </div>
-            <button class="w-full p-3 rounded bg-gray-800 text-white font-bold mb-4">
+            <button class="w-full bg-blue-900 text-white p-2 rounded mb-4 transition-all hover-bg-blue-800"
+                type="button" onclick="handleLogin()">
                 Log In
             </button>
-            <div class="flex items-center justify-center mb-4">
-                <span class="text-white">
-                    OR
-                </span>
+            <div class="text-center text-white mb-4">
+                OR
             </div>
             <button
-                class="w-full p-3 rounded bg-white bg-opacity-20 text-white font-bold flex items-center justify-center mb-4">
-                <img alt="Google logo" class="mr-2" height="20" src="img/pngwing.com (1).png" width="20" />
+                class="w-full bg-green-700 text-white p-2 rounded flex items-center justify-center mb-4 transition-all hover-bg-green-600"
+                type="button">
+                <i class="fab fa-google mr-2">
+                </i>
                 Log in with Google
             </button>
-            <div class="text-center">
-                <span class="text-white">
-                    Don't have an account?
-                    <a class="text-red-500 font-bold" href="signup.html">
-                        Sign up
-                    </a>
-                </span>
+            <div class="text-center text-white">
+                Don't have an account?
+                <a class="text-red-500" href="signup.html">
+                    Sign up
+                </a>
             </div>
         </form>
     </div>
+    <script>
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const otp = document.getElementById('otp').value;
+            const userType = document.getElementById('user-type').value;
+            alert(`Username: ${username}\nPassword: ${password}\nOTP: ${otp}\nUser Type: ${userType}`);
+            if (userType === 'resident') {
+                window.location.href = 'user.html';
+            } else if (userType === 'waste-collector') {
+                window.location.href = 'collector.html';
+            }
+        }
+    </script>
 </body>
 
 </html>

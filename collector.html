@@ -1,0 +1,185 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Waste Collector Admin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-black text-white h-screen flex flex-col">
+            <div class="flex items-center justify-center h-20 border-b border-gray-800">
+                <img alt="Logo" class="h-10 w-10 mr-2" height="40"
+                    src="img/pngwing.com.png"
+                    width="40" />
+                <span class="text-xl font-bold">
+                    <a href="index.html">RewardBin</a>
+                </span>
+            </div>
+            <nav class="flex-1 px-4 py-6">
+                <ul>
+                    <li class="mb-4">
+                        <a class="flex items-center text-green-500 transition-all hover:text-green-300" href="#">
+                            <i class="fas fa-home mr-3">
+                            </i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a class="flex items-center transition-all hover:text-gray-300" href="#">
+                            <i class="fas fa-map-marker-alt mr-3">
+                            </i>
+                            Collection Points
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="px-4 py-6 border-t border-gray-800">
+                <a class="flex items-center mb-4 transition-all hover:text-gray-300" href="#">
+                    <i class="fas fa-cog mr-3">
+                    </i>
+                    Settings
+                </a>
+                <a class="flex items-center text-red-500 transition-all hover:text-red-300" href="#">
+                    <i class="fas fa-sign-out-alt mr-3">
+                    </i>
+                    Log Out
+                </a>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold">
+                    Welcome, Collector
+                </h1>
+                <div class="flex items-center">
+                    <input class="px-4 py-2 border rounded-lg mr-4" placeholder="Search" type="text" />
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-lg transition-all hover:bg-green-400"
+                        onclick="addCollectionPoint()">
+                        Add Collection Point
+                    </button>
+                    <img alt="User Avatar" class="h-10 w-10 rounded-full ml-4" height="40"
+                        src="https://storage.googleapis.com/a1aa/image/OnlnVtVwsDQ6iXcEYqjUTc_9dkCFBDX7QPESUz-2Oj0.jpg"
+                        width="40" />
+                    <i class="fas fa-bell ml-4 text-gray-500 transition-all hover:text-gray-400">
+                    </i>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Total Waste Received (Qty.)
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500" id="total-waste-received">
+                        00
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Pending Waste Orders (Qty.)
+                    </h2>
+                    <p class="text-3xl font-bold text-red-500" id="pending-waste-orders">
+                        00
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg mb-6">
+                <h2 class="text-xl font-bold mb-4">
+                    Collection Points
+                </h2>
+                <!-- map -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2755.3747896641353!2d77.0831733711895!3d28.70607523413941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d06a141622799%3A0xef76c219571b6973!2sShiv%20Vani%20Telecom!5e0!3m2!1sen!2sin!4v1741285537563!5m2!1sen!2sin"
+                    width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- end map -->
+                <div id="map">
+
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                <h2 class="text-xl font-bold mb-4">
+                    Collection Points List
+                </h2>
+                <ul class="list-disc pl-5" id="collection-points-list">
+                    <!-- Collection points will be added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // let map;
+        // let markers = [];
+        // let collectionPoints = [];
+
+        // function initMap() {
+        //     map = new google.maps.Map(document.getElementById("map"), {
+        //         center: { lat: -34.397, lng: 150.644 },
+        //         zoom: 8,
+        //     });
+
+        //     map.addListener("click", (event) => {
+        //         addMarker(event.latLng);
+        //     });
+        // }
+
+        // function addMarker(location) {
+        //     const marker = new google.maps.Marker({
+        //         position: location,
+        //         map: map,
+        //     });
+        //     markers.push(marker);
+        //     collectionPoints.push(location);
+        //     updateCollectionPointsList();
+        // }
+
+        function updateCollectionPointsList() {
+            const list = document.getElementById("collection-points-list");
+            list.innerHTML = "";
+            collectionPoints.forEach((point, index) => {
+                const listItem = document.createElement("li");
+                listItem.className = "flex items-center mb-2";
+                listItem.innerHTML = `
+                    <span class="flex-1">Point ${index + 1}: (${point.lat().toFixed(2)}, ${point.lng().toFixed(2)})</span>
+                    <input type="checkbox" class="ml-2" />
+                `;
+                list.appendChild(listItem);
+            });
+        }
+
+        function addCollectionPoint() {
+            alert("Click on the map to add a collection point.");
+        }
+
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:5000/api/data');
+                const data = await response.json();
+                document.getElementById('total-waste-received').innerText = data.find(item => item.name === 'Total Waste Received').value;
+                document.getElementById('pending-waste-orders').innerText = data.find(item => item.name === 'Pending Waste Orders').value;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchData();
+    </script>
+    <script async="" defer=""
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&amp;callback=initMap">
+        </script>
+</body>
+
+</html>

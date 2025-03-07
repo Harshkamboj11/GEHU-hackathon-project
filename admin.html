@@ -1,0 +1,232 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Dashboard
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-black text-white h-screen flex flex-col">
+            <div class="flex items-center justify-center h-20 border-b border-gray-800">
+                <img alt="Logo" class="h-10 w-10 mr-2" height="40"
+                    src="https://storage.googleapis.com/a1aa/image/LmOLY_LdMbdaObhs5UGHlqAP4MTJVme3KYdHtVNk1-w.jpg"
+                    width="40" />
+                <span class="text-xl font-bold">
+                    RewardBin
+                </span>
+            </div>
+            <nav class="flex-1 px-4 py-6">
+                <ul>
+                    <li class="mb-4">
+                        <a class="flex items-center text-green-500 transition-all hover:text-green-300" href="#">
+                            <i class="fas fa-home mr-3">
+                            </i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a class="flex items-center transition-all hover:text-gray-300" href="#">
+                            <i class="fas fa-map-marker-alt mr-3">
+                            </i>
+                            Collection Points
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a class="flex items-center transition-all hover:text-gray-300" href="#">
+                            <i class="fas fa-donate mr-3">
+                            </i>
+                            Donations
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a class="flex items-center transition-all hover:text-gray-300" href="#">
+                            <i class="fas fa-users mr-3">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="px-4 py-6 border-t border-gray-800">
+                <a class="flex items-center mb-4 transition-all hover:text-gray-300" href="#">
+                    <i class="fas fa-cog mr-3">
+                    </i>
+                    Settings
+                </a>
+                <a class="flex items-center text-red-500 transition-all hover:text-red-300" href="#">
+                    <i class="fas fa-sign-out-alt mr-3">
+                    </i>
+                    Log Out
+                </a>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold">
+                    Welcome, Sana
+                </h1>
+                <div class="flex items-center">
+                    <input class="px-4 py-2 border rounded-lg mr-4" placeholder="Search" type="text" />
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-lg transition-all hover:bg-green-400">
+                        Add Collection Point
+                    </button>
+                    <img alt="User Avatar" class="h-10 w-10 rounded-full ml-4" height="40"
+                        src="https://storage.googleapis.com/a1aa/image/AtKBX2tx1M43Wi2n6ECGLGs0uhWC1589Rlx-YO64uQI.jpg"
+                        width="40" />
+                    <i class="fas fa-bell ml-4 text-gray-500 transition-all hover:text-gray-400">
+                    </i>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Total E-waste Collection Points
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        200
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Total Users
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        2000
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Total Donations
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        1,000
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Total Partnerships
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        150
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <button
+                    class="bg-white p-6 rounded-lg shadow flex items-center justify-center transition-all hover:shadow-lg">
+                    <i class="fas fa-bullhorn text-green-500 text-2xl mr-4">
+                    </i>
+                    Create Campaign
+                </button>
+                <button
+                    class="bg-white p-6 rounded-lg shadow flex items-center justify-center transition-all hover:shadow-lg">
+                    <i class="fas fa-user-cog text-green-500 text-2xl mr-4">
+                    </i>
+                    Manage Users
+                </button>
+                <button
+                    class="bg-white p-6 rounded-lg shadow flex items-center justify-center transition-all hover:shadow-lg">
+                    <i class="fas fa-hand-holding-heart text-green-500 text-2xl mr-4">
+                    </i>
+                    Manage Donations
+                </button>
+                <button
+                    class="bg-white p-6 rounded-lg shadow flex items-center justify-center transition-all hover:shadow-lg">
+                    <i class="fas fa-handshake text-green-500 text-2xl mr-4">
+                    </i>
+                    Manage Partnerships
+                </button>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold">
+                            Eco Points Balance Distribution
+                        </h2>
+                        <button class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg transition-all hover:bg-gray-300">
+                            Filter
+                            <i class="fas fa-chevron-down">
+                            </i>
+                        </button>
+                    </div>
+                    <img alt="Graph showing Eco Points Balance Distribution" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/hOi6sKni21MiSCxdztLM_s0lxZGHk7GppR2meqoa8_U.jpg"
+                        width="400" />
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold">
+                            E-waste Donations
+                        </h2>
+                        <button class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg transition-all hover:bg-gray-300">
+                            Filter
+                            <i class="fas fa-chevron-down">
+                            </i>
+                        </button>
+                    </div>
+                    <img alt="Graph showing E-waste Donations" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/n55cUO-8713e5zqqqKT_C77H1pPGNrZt99NZeYBUcQY.jpg"
+                        width="400" />
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-green-100 p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        E-waste Collection
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        20k
+                    </p>
+                </div>
+                <div class="bg-green-100 p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        E-waste Donation
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        1k
+                    </p>
+                </div>
+                <div class="bg-red-100 p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        User Engagement
+                    </h2>
+                    <p class="text-3xl font-bold text-red-500">
+                        5k
+                    </p>
+                </div>
+                <div class="bg-green-100 p-6 rounded-lg shadow transition-all hover:shadow-lg">
+                    <h2 class="text-xl font-bold mb-2">
+                        Eco Points Activity
+                    </h2>
+                    <p class="text-3xl font-bold text-green-500">
+                        5k
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add any JavaScript interactions or effects here
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Button clicked!');
+            });
+        });
+    </script>
+</body>
+
+</html>

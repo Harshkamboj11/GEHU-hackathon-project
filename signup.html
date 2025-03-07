@@ -105,7 +105,7 @@
                 <input class="w-full p-3 rounded bg-white bg-opacity-20 text-white placeholder-white" id="government-id"
                     type="file" />
             </div>
-            <button class="w-full p-3 rounded bg-gray-800 text-white font-bold mb-4">
+            <button id="btn1" class="w-full p-3 rounded bg-gray-800 text-white font-bold mb-4">
                 Sign up
             </button>
             <div class="flex items-center justify-center mb-4">
@@ -115,9 +115,7 @@
             </div>
             <button
                 class="w-full p-3 rounded bg-white bg-opacity-20 text-white font-bold flex items-center justify-center mb-4">
-                <img alt="Google logo" class="mr-2" height="20"
-                    src="img/pngwing.com (1).png"
-                    width="20" />
+                <img alt="Google logo" class="mr-2" height="20" src="img/pngwing.com (1).png" width="20" />
                 Sign up with Google
             </button>
             <div class="text-center">
@@ -130,6 +128,59 @@
             </div>
         </form>
     </div>
+
+
+    <script>
+
+
+
+
+        function login(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+
+            // Retrieve user data from localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+            const storedUserType = localStorage.getItem('userType'); // Retrieve user type (buyer/potter)
+
+            if (username === storedUsername && password === storedPassword) {
+                alert('Login Successful!');
+
+                // Check user type and redirect accordingly
+                if (storedUserType === 'resident') {
+                    window.location.href = 'user.html'; // Redirect to Buyer Profile
+                } else if (storedUserType === 'waste-collector') {
+                    window.location.href = 'collector.html'; // Redirect to Seller Profile
+                } else {
+                    alert('Invalid user type.');
+                }
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');  // Check login status
+            const userRole = localStorage.getItem('userRole');      // Get user role from localStorage
+
+            if (!isLoggedIn) {
+                window.location.href = 'signup.html';  // Redirect to login page if not logged in
+            } else {
+                // Redirect based on role
+                if (userRole === 'waste-collector') {
+                    window.location.href = 'collector.html';  // Redirect to buyer profile
+                } else if (userRole === 'resident') {
+                    window.location.href = 'user.html';  // Redirect to potter (seller) profile
+                }
+            }
+        }
+
+    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,318 @@
+<html>
+
+<head>
+    <title>
+        Waste Management System - Admin Page
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-green-900 text-white min-h-screen flex flex-col">
+    <header class="bg-green-800 p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">
+            <a href="index.html">Resident - Admin Page</a>
+        </h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li>
+                    <a class="hover:text-green-300" href="das.html">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-300" href="report.html">
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-300" href="digital.html">
+                        Digital Wallet
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex-grow p-4">
+        <section class="mb-8">
+            <h2 class="text-xl font-bold mb-4">
+                Post a New Waste Image
+            </h2>
+            <form class="bg-green-700 p-4 rounded-lg" id="postImageForm">
+                <div style="display: flex;">
+                    <div class="mb-4">
+                        <label class="block mb-2" for="wasteImage">
+                            Upload Waste Image
+                        </label>
+                        <input class="block w-full text-black p-2 rounded-lg" id="wasteImage" type="file"
+                            accept="image/*" required />
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-2" for="location">
+                        Location
+                    </label>
+                    <input class="block w-full text-black p-2 rounded-lg" id="location" type="text"
+                        placeholder="Enter location" required />
+                </div>
+                <button class="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded-lg" type="submit">
+                    Post Image
+                </button>
+            </form>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-xl font-bold mb-4">
+                Digital Wallet
+            </h2>
+            <div class="bg-green-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                    <p class="text-lg font-bold">
+                        Current Balance:
+                    </p>
+                    <p class="text-2xl" id="currentBalance">
+                        1500 Points
+                    </p>
+                </div>
+                <a href="digiwallet.html"><button
+                        class="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded-lg">
+                        Redeem Points
+                    </button></a>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-xl font-bold mb-4">
+                Posted Waste Images
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="postedImages">
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 1" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/Q6ln4VQ9FjNs841E1x6XdtmqAVf9-neyHPGiAmzQIfw.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Central Park
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-01
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 10/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 2" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/J_FPXTbAKNEEFI3jTVrfoz0lYnYhUHLTi4hKbXqWm0Q.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Downtown
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-02
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 15/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 3" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/XDmcRlt790vzU6_wFnWudR50uhjlaRe10TwQV0PMQaI.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Riverside
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-03
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 20/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 4" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/37DtA9tz_iDo63vMFp9BQsldl2mXDBFIawU28xQG4-Q.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Beachside
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-04
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 25/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 5" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/G9daa2yTBEArYgIiKseOJLC1j2Q22ZJglz-DUiZFx4E.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Suburban Area
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-05
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 30/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 6" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/iAiuf5viwZ6Pg_4MQgjejDF7XC9Nb3pekD_mSdsirYU.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Industrial Zone
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-06
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 35/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 7" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/feEvCOOb-Bri4_mKaAg6Czxg_XdfZtGTwd97sxdKQwU.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: City Park
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-07
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 40/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 8" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/nfQ_cbcJEiJrzLEQjzjYwVICvBNUErnMC2ZkvpFxPgo.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Market Area
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-08
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 45/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+                <div class="relative bg-green-700 p-4 rounded-lg backdrop-blur-sm bg-opacity-50">
+                    <img alt="Image of waste item 9" class="w-full h-48 object-cover rounded-lg mb-2" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/C3zHLMi2dX2Czt6Yrs3XpF26RjgqMZn_P-lgcnIHEhE.jpg"
+                        width="300" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">
+                            Location: Residential Area
+                        </p>
+                        <p class="text-sm">
+                            Posted on: 2023-10-09
+                        </p>
+                        <p class="text-sm font-bold">
+                            Reward Earned: 50/100 Points
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-green-800 p-4 text-center">
+        <p>
+            © RewardBin. All rights reserved.
+        </p>
+    </footer>
+    <script>
+        document.getElementById('postImageForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const wasteImage = document.getElementById('wasteImage').files[0];
+            const location = document.getElementById('location').value;
+            const postedImages = document.getElementById('postedImages');
+
+            if (wasteImage && location) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const newImageDiv = document.createElement('div');
+                    newImageDiv.classList.add('relative', 'bg-green-700', 'p-4', 'rounded-lg', 'backdrop-blur-sm', 'bg-opacity-50');
+
+                    newImageDiv.innerHTML = `
+                    <img alt="Uploaded waste item" class="w-full h-48 object-cover rounded-lg mb-2" src="${e.target.result}" />
+                    <div class="p-4 flex flex-col justify-end">
+                        <p class="text-sm">Location: ${location}</p>
+                        <p class="text-sm">Posted on: ${new Date().toISOString().split('T')[0]}</p>
+                        <p class="text-sm font-bold">Reward Earned: 10/100 Points</p>
+                        <button class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg mt-2 delete-button">Delete</button>
+                    </div>
+                `;
+
+                    postedImages.appendChild(newImageDiv);
+                    addDeleteFunctionality(newImageDiv);
+                };
+                reader.readAsDataURL(wasteImage);
+            }
+        });
+
+        function addDeleteFunctionality(element) {
+            const deleteButton = element.querySelector('.delete-button');
+            deleteButton.addEventListener('click', function () {
+                element.remove();
+            });
+        }
+
+        document.querySelectorAll('.delete-button').forEach(button => {
+            addDeleteFunctionality(button.closest('.relative'));
+        });
+    </script>
+</body>
+
+</html>
